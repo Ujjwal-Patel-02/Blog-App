@@ -20,7 +20,7 @@ export default function Register() {
     try {
       setLoading(true);
       setErrorMessage(null);
-      const res = await fetch("/api/auth/register", {
+      const res = await fetch("api/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
