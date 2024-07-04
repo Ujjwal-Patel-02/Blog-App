@@ -5,7 +5,7 @@ import {
   loginFailure,
   loginStart,
   loginSuccess,
-} from "../redux/user/userSlice";
+} from "../redux/Slices/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import OAuth from "../components/OAuth";
 
@@ -92,7 +92,7 @@ export default function Login() {
                 "Login"
               )}
             </Button>
-            <OAuth/>
+            <OAuth />
           </form>
           <div className="flex gap-2 text-sm mt-5">
             <span>Don't have an Account?</span>
