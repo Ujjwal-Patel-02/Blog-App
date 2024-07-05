@@ -97,16 +97,6 @@ export default function CreatePost() {
               setFormData({ ...formData, title: e.target.value })
             }
           />
-          <Select
-            onChange={(e) =>
-              setFormData({ ...formData, category: e.target.value })
-            }
-          >
-            <option value="uncategorized">Select a category</option>
-            <option value="javascript">JavaScript</option>
-            <option value="reactjs">React.js</option>
-            <option value="nextjs">Next.js</option>
-          </Select>
         </div>
         <div className="flex gap-4 items-center justify-between border-4 border-teal-500 border-dotted p-3">
           <FileInput

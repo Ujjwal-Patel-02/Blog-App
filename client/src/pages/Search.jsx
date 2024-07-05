@@ -63,10 +63,6 @@ export default function Search() {
       const order = e.target.value || "desc";
       setSidebarData({ ...sidebarData, sort: order });
     }
-    if (e.target.id === "category") {
-      const category = e.target.value || "uncategorized";
-      setSidebarData({ ...sidebarData, category });
-    }
   };
 
   const handleSubmit = (e) => {
@@ -74,7 +70,6 @@ export default function Search() {
     const urlParams = new URLSearchParams(location.search);
     urlParams.set("searchTerm", sidebarData.searchTerm);
     urlParams.set("sort", sidebarData.sort);
-    urlParams.set("category", sidebarData.category);
     const searchQuery = urlParams.toString();
     navigate(`/search?${searchQuery}`);
   };
@@ -121,19 +116,6 @@ export default function Search() {
             <Select onChange={handleChange} value={sidebarData.sort} id="sort">
               <option value="desc">Latest</option>
               <option value="asc">Oldest</option>
-            </Select>
-          </div>
-          <div className="flex items-center gap-2">
-            <label className="font-semibold">Category:</label>
-            <Select
-              onChange={handleChange}
-              value={sidebarData.category}
-              id="category"
-            >
-              <option value="uncategorized">Uncategorized</option>
-              <option value="reactjs">React.js</option>
-              <option value="nextjs">Next.js</option>
-              <option value="javascript">JavaScript</option>
             </Select>
           </div>
           <Button type="submit" outline gradientDuoTone="purpleToPink">

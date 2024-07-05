@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  loginStart,
+  login,
   loginSuccesss,
   loginFailure,
 } from "../redux/Slices/userSlice";
@@ -23,7 +23,7 @@ export default function Login() {
       return dispatch(loginFailure("Please fill all the fields"));
     }
     try {
-      dispatch(loginStart());
+      dispatch(login());
       const res = await fetch("/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },

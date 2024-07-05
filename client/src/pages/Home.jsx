@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import CallToAction from "../components/CallToAction";
+// import CallToAction from "../components/CallToAction";
 import { useEffect, useState } from "react";
 import PostCard from "../components/PostCard";
+import { Button } from "flowbite-react";
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
@@ -17,20 +18,33 @@ export default function Home() {
   return (
     <div>
       <div className="flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto ">
-        <h1 className="text-3xl font-bold lg:text-6xl">Welcome to my Blog</h1>
+        <h1 className="text-3xl font-bold lg:text-6xl">
+          Welcome to Vivid Narratives
+        </h1>
         <p className="text-gray-500 text-xs sm:text-sm">
-          Here you'll find a variety of articles and tutorials on topics such as
-          web development, software engineering, and programming languages.
+          At VividNarratives, we believe in the power of storytelling and the
+          impact it can have on our lives, Along with articles on web
+          development.
         </p>
         <Link
           to="/search"
-          className="text-xs sm:text-sm text-teal-500 font-bold hover:underline"
+          className="text-xs sm:text-sm text-teal-500 font-bold hover:underline flex flex-col"
         >
           View all posts
         </Link>
+        <Link to="/create-post">
+          <Button
+            type="button"
+            gradientDuoTone="purpleToBlue"
+            size="sm"
+            outline
+          >
+            Create A Post
+          </Button>
+        </Link>
       </div>
       <div className="p-3 bg-amber-100 dark:bg-slate-700">
-        <CallToAction />
+        {/* <CallToAction /> */}
       </div>
 
       <div className="max-w-6xl mx-auto p-3 flex flex-col gap-8 py-7">
