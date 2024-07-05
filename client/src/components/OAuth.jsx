@@ -1,9 +1,9 @@
 import { Button } from "flowbite-react";
 import { AiFillGoogleCircle } from "react-icons/ai";
 import { GoogleAuthProvider, signInWithPopup, getAuth } from "firebase/auth";
-import { app } from "../firebase";
+import { app } from "../firebase.js";
 import { useDispatch } from "react-redux";
-import { loginSuccess } from "../redux/Slices/userSlice";
+import { loginSuccesss } from "../redux/Slices/userSlice";
 import { useNavigate } from "react-router-dom";
 
 export default function OAuth() {
@@ -26,7 +26,7 @@ export default function OAuth() {
       });
       const data = await res.json();
       if (res.ok) {
-        dispatch(loginSuccess(data));
+        dispatch(loginSuccesss(data));
         navigate("/");
       }
     } catch (error) {
