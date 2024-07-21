@@ -14,7 +14,7 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
     const getUser = async () => {
       try {
         const res = await fetch(
-          `https://vividnarratives.onrender.com/api/user/${comment.userId}`
+          `/api/user/${comment.userId}`
         );
         const data = await res.json();
         if (res.ok) {
@@ -35,7 +35,7 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
   const handleSave = async () => {
     try {
       const res = await fetch(
-        `https://vividnarratives.onrender.com/api/comment/editComment/${comment._id}`,
+        `api/comment/editComment/${comment._id}`,
         {
           method: "PUT",
           headers: {
