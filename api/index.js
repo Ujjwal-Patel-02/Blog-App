@@ -22,7 +22,7 @@ const app = express();
 
 app.use(cors(
   {
-    origin: "http://localhost:3000",
+    origin: ["http://blog-app-9407ahmdg-ujjwal-patels-projects-a73db879.vercel.app"],
     credentials: true,
     methods: ["POST", "GET"]
   }
